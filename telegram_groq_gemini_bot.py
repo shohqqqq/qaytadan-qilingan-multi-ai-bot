@@ -551,14 +551,14 @@ def main() -> None:
     # ── Text handler (eng oxirida!) ──────────────────
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
 
-logger.info("✅ Bot ishga tushdi! Ctrl+C bilan to'xtatish mumkin.")
+    logger.info("✅ Bot ishga tushdi! Ctrl+C bilan to'xtatish mumkin.")
 
-import asyncio
+    import asyncio
 
-loop = asyncio.new_event_loop()
-asyncio.set_event_loop(loop)
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
-app.run_polling(allowed_updates=Update.ALL_TYPES)
+    app.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == "__main__":
     main()
