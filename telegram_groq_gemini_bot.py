@@ -19,14 +19,14 @@ Render uchun environment variables:
 from flask import Flask
 from threading import Thread
 
-app = Flask(__name__)
+web_app = Flask(__name__)
 
-@app.route('/')
+@web_app.route('/')
 def home():
     return "Bot is alive!"
 
 def run():
-    app.run(host='0.0.0.0', port=8080)
+    web_app.run(host='0.0.0.0', port=8080)
 
 Thread(target=run, daemon=True).start()
 
