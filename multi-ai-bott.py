@@ -181,11 +181,17 @@ def main():
 
     logger.info('Bot ishga tushdi ✅')
 
-    app.run_polling(
-        drop_pending_updates=True,
-        allowed_updates=Update.ALL_TYPES,
-    )
+    import asyncio
+
+async def run_bot():
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling(drop_pending_updates=True)
+    
+    while True:
+        await asyncio.sleep(1)
+
+if __name__ == "__main__":
+    asyncio.run(run_bot())
 
 
-if __name__ == '__main__':
-    main()
