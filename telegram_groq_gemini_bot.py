@@ -15,6 +15,7 @@ Render uchun environment variables:
     TELEGRAM_BOT_TOKEN
     GROQ_API_KEY
     GEMINI_API_KEY
+
 """
 from flask import Flask
 from threading import Thread
@@ -52,6 +53,8 @@ from telegram.ext import (
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "YOUR_TELEGRAM_BOT_TOKEN")
 GROQ_API_KEY       = os.environ.get("GROQ_API_KEY",       "YOUR_GROQ_API_KEY")
 GEMINI_API_KEY     = os.environ.get("GEMINI_API_KEY",     "YOUR_GEMINI_API_KEY")
+print(GROQ_API_KEY)
+print(GEMINI_API_KEY)
 
 # ─────────────────────────────────────────────────────
 # 📋 MODELLAR
